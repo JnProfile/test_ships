@@ -72,21 +72,18 @@ def temp_db_session(cleanup_temp_database):
             weapon_object = (
                 temp_session.query(Weapon).filter(Weapon.weapon == ship.weapon).first()
             )
-
             Weapon.change_random_attribute(weapon_object)
 
         if "hull" in choices:
             hull_object = (
                 temp_session.query(Hull).filter(Hull.hull == ship.hull).first()
             )
-
             Hull.change_random_attribute(hull_object)
 
         if "engine" in choices:
             engine_object = (
                 temp_session.query(Engine).filter(Engine.engine == ship.engine).first()
             )
-
             Engine.change_random_attribute(engine_object)
 
         temp_session.merge(ship)
