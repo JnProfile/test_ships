@@ -4,14 +4,14 @@ This project is designed to create a database of ships and their components (wea
 
 ## Requirements
 
-- **Python**: 3.12 or higher
+- **Python**: 3.10 or higher
 - **Dependencies**: Managed via `requirements.txt`
 
 ## Project Structure
 
-- **`tables.py`**: Defines the database models (`Ship`, `Weapon`, `Hull`, `Engine`) and randomization logic.
-- **`create_and_fill_db.py`**: Script to initialize and populate the database with initial data.
-- **`test_ships.py`**: Test suite to validate database changes and randomization logic.
+- **`models/tables.py`**: Defines the database models (`Ship`, `Weapon`, `Hull`, `Engine`) and randomization logic.
+- **`scripts/create_and_fill_db.py`**: Script to initialize and populate the database with initial data.
+- **`tests/test_ships.py`**: Test suite to validate database changes and randomization logic.
 - **`requirements.txt`**: Specifies required Python packages.
 
 ## Installation and Setup
@@ -23,15 +23,15 @@ This project is designed to create a database of ships and their components (wea
    ```
 2. Install dependencies
    ```bash
-    pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 3. Create and fill original database
    ```bash
-   python create_and_fill_db.py
+   python script/create_and_fill_db.py
    ```
 
 4. Run tests
    ```bash
-   pytest test_ships.py
+   pytest tests/
    ```
