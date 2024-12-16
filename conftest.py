@@ -68,30 +68,25 @@ def temp_db_session(cleanup_temp_database):
             random_engine = random.choice(engines)
             ship.engine = random_engine.engine
 
-
         if "weapon" in choices:
             weapon_object = (
-                temp_session.query(Weapon)
-                .filter(Weapon.weapon == ship.weapon)
-                .first()
+                temp_session.query(Weapon).filter(Weapon.weapon == ship.weapon).first()
             )
-            warn(f"Changing weapon {ship.ship} {weapon_object.weapon}")
+
             Weapon.change_random_attribute(weapon_object)
 
         if "hull" in choices:
             hull_object = (
                 temp_session.query(Hull).filter(Hull.hull == ship.hull).first()
             )
-            warn(f"Changing hull {ship.ship} {hull_object.hull}")
+
             Hull.change_random_attribute(hull_object)
 
         if "engine" in choices:
             engine_object = (
-                temp_session.query(Engine)
-                .filter(Engine.engine == ship.engine)
-                .first()
+                temp_session.query(Engine).filter(Engine.engine == ship.engine).first()
             )
-            warn(f"Changing engine {ship.ship} {engine_object.engine}")
+
             Engine.change_random_attribute(engine_object)
 
         temp_session.merge(ship)
