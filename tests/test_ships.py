@@ -1,5 +1,5 @@
 import pytest
-from tables import Ship, Weapon, Hull, Engine
+from models.tables import Ship, Weapon, Hull, Engine
 from sqlalchemy.orm import Session
 
 

@@ -1,9 +1,12 @@
 import random
 import os
 import glob
-from tables import Base, Ship, Weapon, Hull, Engine
+import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from models.tables import Base, Ship, Weapon, Hull, Engine
 
 
 def remove_old_databases():

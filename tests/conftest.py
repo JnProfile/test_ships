@@ -2,12 +2,12 @@ import pytest
 import random
 import os
 import glob
-from warnings import warn
-from time import sleep
-from tables import Ship, Weapon, Hull, Engine
+import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from models.tables import Ship, Weapon, Hull, Engine
 
 @pytest.fixture(scope="session")
 def cleanup_temp_database():

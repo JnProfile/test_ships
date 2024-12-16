@@ -1,7 +1,6 @@
 import random
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import declarative_base
-from warnings import warn
 
 Base = declarative_base()
 
