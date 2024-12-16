@@ -5,6 +5,7 @@ from tables import Base, Ship, Weapon, Hull, Engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
+
 def remove_old_databases():
     for f in glob.glob("data/temp*", recursive=True):
         os.remove(f)
@@ -54,16 +55,15 @@ def create_and_fill_database(session):
     session.close()
 
 
-
 if __name__ == "__main__":
     remove_old_databases()
     os.makedirs("data", exist_ok=True)
     engine = create_engine("sqlite:///data/database.db")
     Base.metadata.create_all(bind=engine)
-    
+
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     create_and_fill_database(session)
-    
+
     session.close()
